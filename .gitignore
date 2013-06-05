@@ -1,1 +1,5 @@
-.idea/
+#IDE
+.idea/*
+
+#node
+node_modules/*
