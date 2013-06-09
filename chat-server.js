@@ -10,8 +10,8 @@ var  http    = require('http')
     ,io      = require('socket.io').listen(server)
     ,port    = 5055;
 
-// list of username
-var usernames = {};
+// array for keep username list
+var vClient = new Object();
 
 // listening to port...
 server.listen(port, function(){
@@ -38,18 +38,34 @@ io.sockets.on('connection', function(socket){
         adduser(socket, data);
     });
 
-    socket.on('disconnect', function(){
-        disconnect(socket);
+    socket.on('disconnect', function(data){
+        disconnect(socket,data);
     });
+
+    socket.on('broadcast_msg',function(data){
+        broadcast_msg(socket,data);
+    });
+
 });
 
 //custom event action
-function adduser(socket, data){
-    usernames[data] = data;
-    winston.info(usernames[data]);
-    socket.emit('updatelobby', usernames[data]);
+function adduser(socket, nickName){
+    //user socket.id for keep nickName
+    vClient[socket.id] = nickName;
+    winston.info('New client join room : ' +  vClient[socket.id].nickname);
+
+    io.sockets.emit('updateLobby', { username : vClient[socket.id].nickname });
 }
 
 function disconnect(socket, data){
+    winston.info('client ' + data + ' - ' + vClient[socket.id].nickname + ' left room.');
+    // remove the client
+    delete vClient[socket.id];
+}
 
+function broadcast_msg(socket, data){
+    //broadcast msg to everyone
+    winston.info('msg comming is : ' + data.msg);
+
+    io.sockets.emit('updateChat', { msg : data.msg});
 }
