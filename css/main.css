@@ -25,9 +25,36 @@ body{
     margin: 80px auto;
     background: #c0c0c0;
 }
+    #content{
+        min-height: 550px;
+        width: 960px;
+        background: #0040D0;
+    }
+        #vchat_list{
+            float: left;
+            min-height: 550px;
+            width: 300px;
+            background: #0b97c4;
+        }
+        #vchat_space{
+            float:left;
+            min-height: 550px;
+            width: 660px;
+            background: #954121;
+        }
+            #chat_box{
+                min-height: 500px;
+                width: 660px;
+                background: #219161;
+            }
+            #chat_input{
+                width: 660px;
+                height: 50px;
+                background: #c0c0c0;
+            }
 #copyright_and_reference_wrapper{
     width: 100%;
-    height: 40px;
+    height: 50px;
     background: yellowgreen;
     position: absolute;
     bottom: 0;
