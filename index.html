@@ -5,53 +5,58 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>vChat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/ie.respond.min.js"></script>
-    <script src="js/modernizr.js"></script>
 </head>
 <body>
 
-    <header id="fixheader">
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Settings</li>
+    <header class="navbar">
+        <nav class="navbar-inner">
+            <a class="brand" href="#">vChat</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Settings</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="wrapper">
+    <div id="vChat_container" class="rounded-conner shadow">
+        <div class="container">
 
-       <div id="content">
-           <div id="vchat_list">
-
-           </div>
-           <div id="vchat_space">
-               <div id="chat_box">
+           <div class="row">
+               <div class="span3" id="vchat_list">
 
                </div>
-               <div id="chat_input">
-                    <input type="text" value="" id="msg_box" /><button id="send_msg_btn">Send</button>
+               <div class="span9" id="vchat_space">
+                   <div id="chat_box">
+
+                   </div>
+                   <div id="chat_input">
+                        <input type="text" value="" id="msg_box" /><button id="send_msg_btn">Send</button>
+                   </div>
                </div>
+
            </div>
-       </div>
 
-       <footer id="copyright_and_reference_wrapper">
-            <div id="copyright_and_reference">
+            <footer class="container" id="copyright_and_reference_wrapper">
+                <div id="copyright_and_reference">
 
-            </div>
-        </footer>
+                </div>
+            </footer>
 
+        </div>
     </div>
 
     <!-- This script should change to jquery @ google cdn before to production -->
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="js/ie.respond.min.js"></script>
+    <script src="js/modernizr.js"></script>
     <script type="text/javascript" src="js/vendor/socket.io.min.js"></script>
     <script type="text/javascript" src="js/chat-client.js"></script>
     <script src="js/plugins.js"></script>
