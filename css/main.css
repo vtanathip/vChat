@@ -143,6 +143,7 @@ body{
                         height: 26px;
                         border-right: 1px solid #eaeaea;
                         float: left;
+                        cursor: pointer;
                     }
                     #enter_to_reply {
                         width: 125px !important;
