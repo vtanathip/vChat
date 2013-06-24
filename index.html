@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/nanoscroller.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -43,15 +44,21 @@
                             <div id="list_header">
                                 <p>online<span id="number_online" class="muted"> ( 2 )</span></p>
                             </div>
-                            <div id="list">
+                            <div id="list" class="nano">
+                                <div id="list_username_content" class="content">
+                                    <div class="username">
 
+                                    </div>
+                                </div>
                             </div>
                        </div>
                    </div>
                </div>
                <div class="span9" id="vchat_space">
-                   <div id="chat_box">
+                   <div id="chat_box" class="nano">
+                        <div id="show_chat_data" class="content">
 
+                        </div>
                    </div>
                    <div id="chat_input">
                        <div id="chat_input_container">
@@ -100,6 +107,7 @@
     <script src="js/modernizr.js"></script>
     <script type="text/javascript" src="js/vendor/socket.io.min.js"></script>
     <script type="text/javascript" src="js/chat-client.js"></script>
+    <script src="js/vendor/nanoScrollerJS.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
