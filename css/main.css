@@ -82,25 +82,83 @@ body{
                 width: 100%;
                 border: 1px solid #e3e3e3;
             }
-                .username{
-                    height: 50px;
+                .userdata{
+                    min-height: 50px;
                     width: 220px;
-                    background: darkred;
                     border: 1px solid #e3e3e3;
+                    word-wrap: break-word;
+                    overflow: auto;
                 }
+                    .user_avatar{
+                        float: left;
+                        width: 45px;
+                        height: 45px;
+                        background: #e5e5ee;
+                        margin: 2px 0 2px 10px;
+                        border-radius: 5px;
+                    }
+                    .user_name{
+                        float: left;
+                        width: 150px;
+                        padding-top: 5px;
+                        padding-left: 10px;
+                    }
+                        .user_text_name{
+                            font-weight: bold;
+                            color: #777777;
+                        }
+                        .user_title{
+                            font-size: 9px;
+                        }
         #vchat_space{
             height: 525px;
             border: 1px solid #e3e3e3;
         }
+
             #chat_box{
                 height: 420px;
             }
                 .userchat{
-                    height: 50px;
+                    min-height: 50px;
                     width: 100%;
-                    background: darkred;
-                    border: 1px solid #e3e3e3;
+                    word-wrap: break-word;
                 }
+                    .chat_text{
+                        float: left;
+                        width: 95%;
+                        min-height: 50px;
+                    }
+                .senderchat{
+                    min-height: 50px;
+                    width: 100%;
+                    word-wrap: break-word;
+                }
+                    .sender_chat_text{
+                        float: left;
+                        width: 80%;
+                        min-height: 50px;
+                    }
+                        .sender_chat_username{
+                            float: left;
+                            width: 20%;
+                            min-height: 50px;
+                        }
+                        .sender_chat_name{
+                            width: 100%;
+                            min-height: 50px;
+                            text-align: center;
+                        }
+                            .sender_chat_name span{
+                                font-weight: bold;
+                            }
+                            .sender_avatar{
+                                width: 45px;
+                                height: 45px;
+                                background: #e5e5ee;
+                                margin: 10px auto;
+                                border-radius: 5px;
+                            }
+
             #chat_input{
                 width: 100%;
                 height: 100px;
@@ -203,4 +261,64 @@ body{
 }
 .noresize{
     resize: none;
+}
+
+.bubble_sender
+{
+    position: relative;
+    width: 360px;
+    min-height: 60px;
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.bubble_sender:after
+{
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: -15px;
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
+}
+.bubble_me
+{
+    position: relative;
+    width: 360px;
+    min-height: 60px;
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float: right;
+    margin-left: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.bubble_me:after
+{
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: -15px;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent #FFFFFF;
+    display: block;
+    width: 0;
+    z-index: 1;
 }
