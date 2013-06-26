@@ -132,6 +132,7 @@ body{
                     min-height: 50px;
                     width: 100%;
                     word-wrap: break-word;
+                    clear: both;
                 }
                     .sender_chat_text{
                         float: left;
@@ -142,6 +143,7 @@ body{
                             float: left;
                             width: 20%;
                             min-height: 50px;
+                            margin-top: 10px;
                         }
                         .sender_chat_name{
                             width: 100%;
@@ -152,8 +154,8 @@ body{
                                 font-weight: bold;
                             }
                             .sender_avatar{
-                                width: 45px;
-                                height: 45px;
+                                width: 55px;
+                                height: 55px;
                                 background: #e5e5ee;
                                 margin: 10px auto;
                                 border-radius: 5px;
