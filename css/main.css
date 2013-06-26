@@ -272,9 +272,7 @@ body{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+	border: #7F7F7F solid 2px;
     padding: 10px;
     background-color: #fff0a0;
     background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
@@ -282,21 +280,33 @@ body{
     background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:      -o-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:         linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),3px 3px 0 hsla(0,0%,0%,.1);
 }
 
 .bubble_sender:after
+{	
+	content: "";
+	position: absolute;
+	top: 44px;
+	left: -15px;
+	border-style: solid;
+	border-width: 16px 16px 16px 0;
+	border-color: transparent #fff0a0;
+	display: block;
+	width: 0;
+	z-index: 1;
+}
+.bubble_sender:before 
 {
-    content: "";
-    position: absolute;
-    top: 22px;
-    left: -15px;
-    border-style: solid;
-    border-width: 15px 15px 15px 0;
-    border-color: transparent #fef6cf;
-    display: block;
-    width: 0;
-    z-index: 1;
+	content: "";
+	position: absolute;
+	top: 42px;
+	left: -18px;
+	border-style: solid;
+	border-width: 18px 18px 18px 0;
+	border-color: transparent #7F7F7F;
+	display: block;
+	width: 0;
+	z-index: 0;
 }
 .bubble_me
 {
@@ -307,6 +317,7 @@ body{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+	border: #7F7F7F solid 2px;
     float: right;
     margin-left: 30px;
     margin-top: 5px;
@@ -318,19 +329,31 @@ body{
     background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:      -o-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:         linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),3px 3px 0 hsla(0,0%,0%,.1);
 }
 
 .bubble_me:after
 {
-    content: "";
-    position: absolute;
-    top: 22px;
-    right: -15px;
-    border-style: solid;
-    border-width: 15px 0 15px 15px;
-    border-color: transparent #fef6cf;
-    display: block;
-    width: 0;
-    z-index: 1;
+	content: "";
+	position: absolute;
+	top: 45px;
+	right: -15px;
+	border-style: solid;
+	border-width: 16px 0 16px 17px;
+	border-color: transparent #fff0a0;
+	display: block;
+	width: 0;
+	z-index: 1;
+}
+.bubble_me:before 
+{
+	content: "";
+	position: absolute;
+	top: 44px;
+	right: -17px;
+	border-style: solid;
+	border-width: 17px 0 17px 17px;
+	border-color: transparent #7F7F7F;
+	display: block;
+	width: 0;
+	z-index: 0;
 }
