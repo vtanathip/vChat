@@ -12,6 +12,7 @@ var  http    = require('http')
 
 // array for keep username list
 var vClient = new Object();
+var myUserName;
 
 // listening to port...
 server.listen(port, function(){
@@ -48,24 +49,38 @@ io.sockets.on('connection', function(socket){
 
 });
 
-//custom event action
-function adduser(socket, nickName){
+//add username to list
+function adduser(socket, data){
+
+    myUserName =  data.nickname;
     //user socket.id for keep nickName
-    vClient[socket.id] = nickName;
+    vClient[socket.id] = data;
+
     winston.info('New client join room : ' +  vClient[socket.id].nickname);
 
     io.sockets.emit('updateLobby', { username : vClient[socket.id].nickname });
 }
 
+//delete user when disconnected
 function disconnect(socket, data){
-    winston.info('client ' + data + ' - ' + vClient[socket.id].nickname + ' left room.');
+    if(vClient[socket.id] == null){
+        winston.info('Gone without ID to handle it.');
+    }else{
+        winston.info('client ' + data + ' - ' + vClient[socket.id].nickname + ' left room.');
+    }
     // remove the client
     delete vClient[socket.id];
 }
 
+//broadcast msg to everyone
 function broadcast_msg(socket, data){
     //broadcast msg to everyone
     winston.info('msg comming is : ' + data.msg);
+    if(data.username === myUserName){
+        winston.info('you are the one' + data.username);
+    }else{
+        winston.info('not you' + data.username);
+    }
 
     io.sockets.emit('updateChat', { msg : data.msg});
 }
