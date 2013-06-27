@@ -12,8 +12,15 @@
             $('#loginForm_wrapper').addClass('animated bounceOutLeft');
             setTimeout(function() {
                 // code will happen after the timeout has completed : means animation is played
-                $('#loginForm_wrapper').hide();
-            }, 1000); // 1 second
+                $('#loginForm_wrapper').addClass('deleteElement');
+            }, 500); // 1 second
+
+            setTimeout(function() {
+                // code will happen after the timeout has completed : means animation is played
+                $('#chat_wrapper').fadeIn('fast');
+            }, 700); // 1 second
+
+            //everything ready and send data to server
             //socket.emit('addNewUser', { 'clientName' :  $('#clientName').val() });
         }
     });
