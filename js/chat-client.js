@@ -35,12 +35,8 @@
 
     //shown data in box
     socket.on('updateChat', function(data){
-
-        var new_msg_div = "<div class='userdata'>";
-        new_msg_div += "</div>";
-
         console.log('new msg is ' + data.msg);
-        $('#show_chat_data').append('<b>' + data.msg + ':</b><br/>');
+        $('#show_chat_data').append(data.box);
     });
 
     //send chat data to server

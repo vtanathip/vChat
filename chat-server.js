@@ -75,12 +75,31 @@ function disconnect(socket, data){
 //broadcast msg to everyone
 function broadcast_msg(socket, data){
     //broadcast msg to everyone
+	var msg_box;
     winston.info('msg comming is : ' + data.msg);
     if(data.username === myUserName){
-        winston.info('you are the one' + data.username);
+        winston.info('you are the one' + data.username); 
+		msg_box = '<div class="userchat">';
+			msg_box += '<div class="chat_text">';
+				msg_box += '<div class="bubble_me">' + data.msg + '</div>';
+			msg_box += '</div>';
+		msg_box += '</div>';
     }else{
         winston.info('not you' + data.username);
+		msg_box = '<div class="senderchat">';
+			msg_box += '<div class="sender_chat_username">';
+				msg_box += '<div class="sender_chat_name">';
+					msg_box += '<div class="sender_avatar"></div>';
+					msg_box += '<span>'+ data.username +'</span>';
+				msg_box += '</div>';
+			msg_box += '</div>';
+			msg_box += '<div class="sender_chat_text">';
+				msg_box += '<div class="bubble_sender">';
+					msg_box += data.msg;
+				msg_box += '</div>';
+			msg_box += '</div>';
+		msg_box += '</div>';
     }
 
-    io.sockets.emit('updateChat', { msg : data.msg});
+    io.sockets.emit('updateChat', { msg : data.msg , box : msg_box});
 }
