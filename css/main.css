@@ -13,7 +13,7 @@ body{
             font-size: 70px;
             text-align: center;
             display: block;
-            margin: 0 0 20px 0;
+            margin: 0 20px 10px 0;
             text-shadow: 4px 4px 2px rgba(147, 147, 147); /* Fallback */
             text-shadow: 4px 4px 2px rgba(147, 147, 147,0.5);
         }
