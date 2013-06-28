@@ -18,6 +18,7 @@
             setTimeout(function() {
                 // code will happen after the timeout has completed : means animation is played
                 $('#chat_wrapper').fadeIn('fast');
+                $('#msg_input').focus();
             }, 700); // 1 second
 
             //everything ready and send data to server
