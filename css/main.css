@@ -87,11 +87,12 @@ body{
                     .notification_style{
                         border: 1px dashed #ffebcd;
                         border-radius: 5px;
-                        color: #DC9645;
+                        color: #c3f5d8;
                         padding: 10px;
                         font-family: 'MiasScribblings';
                     }
                         .notification_name{
+                            color: #DC9645;
                             font-weight: bold;
                         }
                     .msg_content{
