@@ -54,6 +54,60 @@ body{
             background: url('../images/bg_assests/blackboard.png') 0 0 no-repeat;
             position: relative;
         }
+            #text_container{
+                position: absolute;
+                top: 54px;
+                left: 52px;
+                width: 600px;
+                height: 360px;
+            }
+                .sender,.owner,.notification{
+                    width: 100%;
+                    height: auto;
+                    float: left;
+                    clear: both;
+                    max-width: 700px;
+                    word-wrap: break-word;
+                    padding: 5px;
+                }
+                .owner{
+                    float: right;
+                    text-align: right;
+                }
+                .sender_name{
+                    color: #dcab70;
+                    font-weight: bold;
+                    font-family: 'Kg';
+                    text-shadow: 1px 1px #000000;
+                }
+                .notification{
+                    margin: 15px 0 15px 0;
+                    text-align: center;
+                }
+                    .notification_style{
+                        border: 1px dashed #ffebcd;
+                        border-radius: 5px;
+                        color: #DC9645;
+                        padding: 10px;
+                        font-family: 'MiasScribblings';
+                    }
+                        .notification_name{
+                            font-weight: bold;
+                        }
+                    .msg_content{
+                        margin: 10px;
+                        color: #ffffff;
+                        text-shadow: 2px 2px #000000;
+                    }
+                    .timespan{
+                        background: #f7f7f7;
+                        color: #444;
+                        padding: 4px;
+                        font-size: 10px;
+                        font-weight: bold;
+                        border-radius: 2px;
+                        font-family: Georgia, serif;
+                    }
             #text_input_container{
                 width: 430px;
                 height: auto;
