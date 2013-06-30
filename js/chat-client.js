@@ -2,6 +2,12 @@
     var serverAddress = 'http://127.0.0.1:5055',
         socket        = null;
 
+    var notification_tmpl = '<div class="notification" id="notification_content">';
+        notification_tmpl += '<span class="notification_style">';
+            notification_tmpl += '<span class="notification_name">"${clientName}"</span> has joined the room.';
+        notification_tmpl += '</span>';
+    notification_tmpl += '</div>';
+
     socket =  io.connect(serverAddress);
 
     //focus on client key name and press enter then submit to server
@@ -23,8 +29,18 @@
             }, 700); // 1 second
 
             //everything ready and send data to server
-            //socket.emit('addNewUser', { 'clientName' :  $('#clientName').val() });
+            socket.emit('addNewUser', { 'clientName' :  $('#clientName').val() });
+
+            console.debug('emit data to server clientName is ' + $('#clientName').val());
         }
+    });
+
+    socket.on('notification', function(data) {
+
+        console.debug('notification is coming with clientName is ' + data.clientName);
+
+        $.tmpl( notification_tmpl, { "clientName" : data.clientName } )
+                .appendTo( "#chat_content" );
     });
 
 })(jQuery);

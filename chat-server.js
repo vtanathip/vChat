@@ -12,7 +12,6 @@ var  http    = require('http')
 
 // array for keep username list
 var vClient = new Object();
-var myUserName;
 
 // listening to port...
 server.listen(port, function(){
@@ -35,7 +34,7 @@ io.set('log level',2);
 //every connection will go through this event handler
 io.sockets.on('connection', function(socket){
 
-    socket.on('adduser', function(data){
+    socket.on('addNewUser', function(data){
         addNewUser(socket, data);
     });
 
@@ -44,11 +43,10 @@ io.sockets.on('connection', function(socket){
 //add username to list
 function addNewUser(socket, data){
 
-    myUserName =  data.nickname;
     //user socket.id for keep nickName
     vClient[socket.id] = data;
 
-    winston.info('New client join room : ' +  vClient[socket.id].nickname);
+    winston.info('New client join room : ' +  vClient[socket.id].clientName);
 
-    io.sockets.emit('updateLobby', { username : vClient[socket.id].nickname });
+    socket.broadcast.emit('notification', { clientName : vClient[socket.id].clientName });
 }
