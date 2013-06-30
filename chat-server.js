@@ -34,19 +34,47 @@ io.set('log level',2);
 //every connection will go through this event handler
 io.sockets.on('connection', function(socket){
 
-    socket.on('addNewUser', function(data){
-        addNewUser(socket, data);
+    socket.on('addNewClient', function(data){
+        addNewClient(socket, data);
+    });
+
+    socket.on('disconnect', function(data){
+        removeClient(socket, data);
+    });
+
+    socket.on('sendMSG', function(data){
+        sendMSG(socket, data);
     });
 
 });
 
-//add username to list
-function addNewUser(socket, data){
+//notify joined user and add user to list
+function addNewClient(socket, data){
 
     //user socket.id for keep nickName
     vClient[socket.id] = data;
 
     winston.info('New client join room : ' +  vClient[socket.id].clientName);
 
-    socket.broadcast.emit('notification', { clientName : vClient[socket.id].clientName });
+    socket.broadcast.emit('notification_join_client', { clientName : vClient[socket.id].clientName });
+
+}
+
+//notification leave user and remove out from list
+function removeClient(socket,data){
+    //check condition client is in array or not
+    if(vClient[socket.id]!=null){
+        socket.broadcast.emit('notification_leave_client', { clientName : vClient[socket.id].clientName });
+        //remove client
+        delete vClient[socket.id];
+    }
+}
+
+//send msg to everyone
+function sendMSG(socket,data){
+    winston.info('Msg from ' + data.username + ' is : ' +  data.chatMSG);
+    //send msg to everyone except sender
+    socket.broadcast.emit('broadcast_msg', { chat_msg : data.chatMSG , username : data.username , type : "sender" } );
+    //send msg to client
+    socket.emit('broadcast_msg', { chat_msg : data.chatMSG , username : data.username , type : "owner" });
 }

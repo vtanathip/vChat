@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'ReenieBeanie';
+    src: url('fonts/reenie/ReenieBeanie.eot');
+    src: local('☺'), url('fonts/reenie/ReenieBeanie.woff') format('woff'), url('fonts/reenie/ReenieBeanie.ttf') format('truetype'), url('fonts/reenie/ReenieBeanie.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Lily Script One regular';
     src: url('fonts/lily/Lily Script One regular.eot');
     src: local('☺'), url('fonts/lily/Lily Script One regular.woff') format('woff'), url('fonts/lily/Lily Script One regular.ttf') format('truetype'), url('fonts/lily/Lily Script One regular.svg') format('svg');
@@ -9,13 +16,6 @@
     font-family: 'MiasScribblings';
     src: url('fonts/mias/MiasScribblings.eot');
     src: local('☺'), url('fonts/mias/MiasScribblings.woff') format('woff'), url('fonts/mias/MiasScribblings.ttf') format('truetype'), url('fonts/mias/MiasScribblings.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ReenieBeanie';
-    src: url('fonts/reenie/ReenieBeanie.eot');
-    src: local('☺'), url('fonts/reenie/ReenieBeanie.woff') format('woff'), url('fonts/reenie/ReenieBeanie.ttf') format('truetype'), url('fonts/reenie/ReenieBeanie.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
