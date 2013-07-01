@@ -26,7 +26,12 @@
 
     //focus on client key name and press enter then submit to server
     $('#clientName').keypress(function(event){
-        // In Firefox, you have to use event.which to get the keycode; while IE support both event.keyCode and event.which.
+        handleClientName();
+    });
+	
+	//extract handle client name
+	function handleClientName(){
+		// In Firefox, you have to use event.which to get the keycode; while IE support both event.keyCode and event.which.
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
             $('#loginForm_wrapper').addClass('animated bounceOutLeft');
@@ -52,8 +57,8 @@
 
             console.debug('emit data to server clientName is ' + username );
         }
-    });
-
+	}
+	
     //focus on keypress chat msg
     $('#msg_input').keypress(function(event){
 

@@ -23,6 +23,12 @@ body{
 				margin:0 0 17px 0;
 				color: #644436;
 			}
+			#wrapper h4{
+				font-family: 'MiasScribblings';
+				font-size: 12px;
+				margin:10px 0 0 0;
+				color: #8D5D35;
+			}
         #loginForm_wrapper{
            width: 330px;
            height: auto;
