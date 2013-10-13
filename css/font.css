@@ -6,9 +6,9 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Lily Script One regular';
-    src: url('fonts/lily/Lily Script One regular.eot');
-    src: local('☺'), url('fonts/lily/Lily Script One regular.woff') format('woff'), url('fonts/lily/Lily Script One regular.ttf') format('truetype'), url('fonts/lily/Lily Script One regular.svg') format('svg');
+    font-family: 'Lily';
+    src: url('fonts/lily/Lily.eot');
+    src: local('☺'), url('fonts/lily/Lily.woff') format('woff'), url('fonts/lily/Lily.ttf') format('truetype'), url('fonts/lily/Lily.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
