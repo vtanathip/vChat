@@ -12,6 +12,20 @@ var  http    = require('http')
 
 // array for keep username list
 var vClient = new Object();
+var mongo = require('mongodb');
+
+//db server uri
+var mongoUri = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/vchat';
+
+//connect to database
+mongo.Db.connect(mongoUri, function (err, db) {
+    db.collection('mydocs', function(er, collection) {
+        collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
+        });
+    });
+});
 
 // listening to port...
 server.listen(process.env.PORT || port, function(){
