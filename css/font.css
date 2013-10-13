@@ -7,8 +7,8 @@
 }
 @font-face {
     font-family: 'Lily';
-    src: url('fonts/lily/Lily.eot');
-    src: local('☺'), url('fonts/lily/Lily.woff') format('woff'), url('fonts/lily/Lily.ttf') format('truetype'), url('fonts/lily/Lily.svg') format('svg');
+    src: url('fonts/lilys/Lily.eot');
+    src: local('☺'), url('fonts/lilys/Lily.woff') format('woff'), url('fonts/lilys/Lily.ttf') format('truetype'), url('fonts/lilys/Lily.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
