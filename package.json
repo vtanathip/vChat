@@ -5,6 +5,7 @@
     "dependencies": {
         "express": "*",
         "socket.io": "*",
-        "winston": "*"
+        "winston": "*",
+        "mongodb" : "1.1.11"
     }
 }
