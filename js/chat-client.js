@@ -1,6 +1,5 @@
 (function ($) {
-    var serverAddress = 'http://127.0.0.1',
-        port          = (process.env.PORT || port),
+    var serverAddress = 'http://127.0.0.1:5000',
         socket        = null;
 
     var username;
@@ -23,7 +22,7 @@
         owner_tmpl += '<span class="timespan">${time}</span>';
     owner_tmpl += '</div>';
 
-    socket =  io.connect(serverAddress + port);
+    socket =  io.connect(serverAddress);
 
     //focus on client key name and press enter then submit to server
     $('#clientName').keypress(function(event){
