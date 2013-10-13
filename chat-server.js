@@ -14,7 +14,7 @@ var  http    = require('http')
 var vClient = new Object();
 
 // listening to port...
-server.listen(port, function(){
+server.listen(process.env.PORT || port, function(){
     console.log("Chat Server up and running. Go to http://" + "127.0.0.1" + ":" + port);
 });
 
