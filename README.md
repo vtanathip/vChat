@@ -11,3 +11,5 @@ How to install?
 3. ` node chat-server.js ` for run server
 4. open browser `http://127.0.0.1:5055`
 5. enjoy !!!
+
+PS: if you want to test in local computer change chat-client.js to `http://127.0.0.1:5055`
