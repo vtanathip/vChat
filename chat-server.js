@@ -15,9 +15,7 @@ var vClient = new Object();
 var mongo = require('mongodb');
 
 //db server uri
-var mongoUri = process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL ||
-    'mongodb://localhost/vchat';
+var mongoUri = 'mongodb://vtanathip:smarty@paulo.mongohq.com:10081/app18642167';;
 
 //connect to database
 mongo.Db.connect(mongoUri, function (err, db) {
