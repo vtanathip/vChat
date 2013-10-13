@@ -21,7 +21,7 @@ var mongoUri = process.env.MONGOLAB_URI ||
 
 //connect to database
 mongo.Db.connect(mongoUri, function (err, db) {
-    winston.info('database connected: ' + db + " ||| " + er);
+    winston.info('database connected: ' + db + " ||| " + err);
     db.collection('mydocs', function(er, collection) {
         collection.insert({'mykey': 'myvalue'}, {safe: true}, function(er,rs) {
             winston.info('database inserted response:' + rs + " ||| " + er);
